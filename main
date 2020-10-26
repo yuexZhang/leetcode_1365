@@ -1,0 +1,15 @@
+# 对于数组中的每一个元素，我们都遍历数组一次，统计小于当前元素的数的数目。
+int* smallerNumbersThanCurrent(int* nums, int numsSize, int* returnSize) {
+    int* ret = malloc(sizeof(int) * numsSize);
+    *returnSize = numsSize;
+    for (int i = 0; i < numsSize; i++) {
+        int cnt = 0;
+        for (int j = 0; j < numsSize; j++) {
+            if (nums[j] < nums[i]) {
+                cnt++;
+            }
+        }
+        ret[i] = cnt;
+    }
+    return ret;
+}
